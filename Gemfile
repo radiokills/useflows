@@ -11,8 +11,19 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
-
 #gem 'turbolinks'
+
+gem 'multi_json'
+gem 'oj'
+
+gem 'haml-rails'
+
+gem 'mini_magick'
+gem 'carrierwave'
+
+gem 'fog'
+
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 
 gem 'heroku'
 
@@ -27,6 +38,8 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara'
   # gem 'poltergeist'
+
+  gem 'shoulda-matchers'
 end
 
 group :test, :development do

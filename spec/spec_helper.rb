@@ -17,18 +17,17 @@ Spork.prefork do
   require 'factory_girl_rails'
   require 'capybara/rails'
   require 'capybara/rspec'
-  require 'capybara/poltergeist'
+  # require 'capybara/poltergeist'
 
   require 'carrierwave/test/matchers'
   require 'webmock/rspec'
 
-  Capybara.javascript_driver = :poltergeist
-
-  Capybara.register_driver :poltergeist do |app|
-    Capybara::Poltergeist::Driver.new(app, {
-      window_size: [1024, 768]
-    })
-  end
+  # Capybara.javascript_driver = :poltergeist
+  # Capybara.register_driver :poltergeist do |app|
+  #   Capybara::Poltergeist::Driver.new(app, {
+  #     window_size: [1024, 768]
+  #   })
+  # end
 
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
