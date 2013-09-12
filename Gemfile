@@ -12,6 +12,9 @@ gem 'jquery-rails'
 
 #gem 'turbolinks'
 
+gem 'heroku'
+
+
 group :doc do
   gem 'sdoc', require: false
 end
