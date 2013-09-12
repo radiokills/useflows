@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: uxs_development
+  pool: 10
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: uxs_test
+  pool: 10
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: uxs_production
+  pool: 5

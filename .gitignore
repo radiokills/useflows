@@ -1,0 +1,16 @@
+public/assets
+assets_*
+.DS_Store
+/db/pg-*
+/.env
+/.env*
+/*.env*
+/*.s3*
+/.bundle
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*.log
+/tmp
+/libpeerconnection.log
+public/uploads/**
+public/fallback
