@@ -12,6 +12,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 #gem 'turbolinks'
+gem 'zurb-foundation'
+
 
 gem 'multi_json'
 gem 'oj'
@@ -20,10 +22,14 @@ gem 'haml-rails'
 
 gem 'mini_magick'
 gem 'carrierwave'
-
 gem 'fog'
 
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
+
+gem 'decent_exposure'
+gem 'active_model_serializers'
+
+gem 'kaminari'
 
 gem 'heroku'
 

@@ -16,14 +16,14 @@ describe ShotsUploader do
     @uploader.remove!
   end
 
-  context 'resizes' do
-    it "100 x 100" do
-      @uploader.thumb.should have_dimensions(100, 100)
-    end
+  # context 'resizes' do
+  #   it "100 x 100" do
+  #     @uploader.thumb.should have_dimensions(100, 100)
+  #   end
 
-    it "800 x 600" do
-      @uploader.huge.should have_dimensions(800, 600)
-    end
-  end
+  #   it "800 x 600" do
+  #     @uploader.huge.should have_dimensions(800, 600)
+  #   end
+  # end
 
 end

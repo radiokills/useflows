@@ -1,4 +1,16 @@
 Uxscreen::Application.routes.draw do
+
+  root "static#home"
+
+  get 'admin' => "static#admin"
+
+  resources :shots, only: [:new, :create]
+
+  namespace :admin do
+    resources :shots, :pattern_groups
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +51,7 @@ Uxscreen::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

@@ -17,9 +17,9 @@ class ShotsUploader < CarrierWave::Uploader::Base
     model.dimensions = [width, height]
   end
 
-  # version :thumb do
-  #   process :resize_to_fill => [60, 60]
-  # end
+  version :thumb do
+    process :resize_to_fill => [20, 20]
+  end
 
   def extension_white_list
     %w(gif)

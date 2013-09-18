@@ -1,0 +1,43 @@
+= paginate shots, remote: true
+
+%br/
+
+- if shots.any?
+  %table
+    %thead
+      %tr
+        %th ID
+        %th PG
+        %th Email / TW
+        %th URL
+        %th Visible
+        %th Image
+        %th Updated
+        %th Tools
+
+    %tbody
+      - shots.each do |shot|
+        %tr
+          %th=shot.id
+          %th
+            = shot.pattern_group
+          %td
+            = [shot.email.present? ? shot.email : nil, shot.tw_handler.present? ? shot.tw_handler : nil].compact.join("/")
+          %td=link_to shot.small_url, shot.url, target: "_blank"
+          %td
+            = shot.visible? ? raw("&nbsp;") : "Hidden"
+          %td
+            = shot.image.present? ? raw("&nbsp;") : "No image"
+
+          %td="#{time_ago_in_words(shot.updated_at)} ago"
+          %td
+            =link_to "Remove", [:admin, shot], method: :delete
+            |
+            =link_to "Edit", [:edit, :admin, shot]
+- else
+  %p
+    No shots in database.
+
+= paginate shots, remote: true
+
+%br/

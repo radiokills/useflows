@@ -1,0 +1,33 @@
+= paginate pattern_groups, remote: true
+
+%br/
+
+- if pattern_groups.any?
+  %table
+    %thead
+      %tr
+        %th ID
+        %th Name
+        %td Shots
+        %th Tools
+
+    %tbody
+      - pattern_groups.each do |pg|
+        %tr
+          %th=pg.id
+          %td=pg.name
+          %td
+            =pg.shots.count
+          %td
+            =link_to "Remove", [:admin, pg], method: :delete
+            |
+            =link_to "Edit", [:edit, :admin, pg]
+- else
+  %p
+    No PG's in database.
+
+
+
+= paginate pattern_groups, remote: true
+
+%br/

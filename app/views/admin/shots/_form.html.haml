@@ -1,0 +1,101 @@
+= form_for [:admin, shot] do |f|
+
+  - if f.object.errors.any?
+    - f.object.errors.each do |e|
+      = e
+
+  %fieldset
+    %legend Shot
+    .row
+      .small-2.columns{class: f.object.errors[:description].any? ? "error" : ""}
+        = f.label :description, class: "right inline"
+      .small-10.columns{class: f.object.errors[:description].any? ? "error" : ""}
+        = f.text_area :description, rows: 4
+        -if f.object.errors[:description].any?
+          %br/
+          -f.object.errors[:description].each do |error|
+            %small.error=error
+
+    .row
+      .small-2.columns{class: f.object.errors[:pattern_group_id].any? ? "error" : ""}
+        = f.label :pattern_group_id, "Pattern Group", class: "right inline"
+      .small-10.columns{class: f.object.errors[:pattern_group_id].any? ? "error" : ""}
+        = f.select :pattern_group_id, PatternGroup.all.map{ |pg| [pg.name, pg.id] }
+        -if f.object.errors[:pattern_group_id].any?
+          %br/
+          -f.object.errors[:pattern_group_id].each do |error|
+            %small.error=error
+
+    .row
+      .small-2.columns{class: f.object.errors[:url].any? ? "error" : ""}
+        = f.label :url, "URL", class: "right inline"
+      .small-10.columns{class: f.object.errors[:url].any? ? "error" : ""}
+        = f.url_field :url
+        -if f.object.errors[:url].any?
+          %br/
+          -f.object.errors[:url].each do |error|
+            %small.error=error
+
+    .row
+      .small-2.columns{class: f.object.errors[:email].any? ? "error" : ""}
+        = f.label :email, "Email", class: "right inline"
+      .small-10.columns{class: f.object.errors[:email].any? ? "error" : ""}
+        = f.email_field :email
+        -if f.object.errors[:email].any?
+          %br/
+          -f.object.errors[:email].each do |error|
+            %small.error=error
+
+    .row
+      .small-2.columns{class: f.object.errors[:tw_handler].any? ? "error" : ""}
+        = f.label :tw_handler, "Twitter", class: "right inline"
+      .small-10.columns{class: f.object.errors[:tw_handler].any? ? "error" : ""}
+        = f.text_field :tw_handler
+        -if f.object.errors[:tw_handler].any?
+          %br/
+          -f.object.errors[:tw_handler].each do |error|
+            %small.error=error
+
+
+    -#
+      .row
+        .small-2.columns{class: f.object.errors[:tag_list].any? ? "error" : ""}
+          = f.label :tag_list, "Tags", class: "right inline"
+        .small-10.columns{class: f.object.errors[:tag_list].any? ? "error" : ""}
+          = f.text_field :tag_list
+          -if f.object.errors[:tag_list].any?
+            %br/
+            -f.object.errors[:tag_list].each do |error|
+              %small.error=error
+
+    .row
+      .small-2.columns{class: f.object.errors[:image].any? ? "error" : ""}
+        = f.label :image, class: "right inline"
+      .small-10.columns{class: f.object.errors[:image].any? ? "error" : ""}
+        = f.file_field :image
+        -if f.object.errors[:image].any?
+          %br/
+          -f.object.errors[:image].each do |error|
+            %small.error=error
+
+        = f.hidden_field :image_cache
+
+    .row
+      .small-2.columns{class: f.object.errors[:visible].any? ? "error" : ""}
+        = f.label :visible, "Visible?", class: "right inline"
+      .small-10.columns{class: f.object.errors[:visible].any? ? "error" : ""}
+        = f.check_box :visible
+        -if f.object.errors[:visible].any?
+          %br/
+          -f.object.errors[:visible].each do |error|
+            %small.error=error
+
+    .row
+      .small-2.columns
+        %span.right.inline Shot
+      .small-10.columns
+        %span.th.radius
+          = image_tag f.object.image_url
+
+
+  = f.submit
