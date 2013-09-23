@@ -19,7 +19,7 @@ class Admin::ShotsController < Admin::BaseController
 
   def create
     if shot.save
-      redirect_to [:admin, :shots]
+      redirect_to [:admin, :shots], flash: {notice: "Shot updated."}
     else
       render :edit
     end
@@ -27,7 +27,7 @@ class Admin::ShotsController < Admin::BaseController
 
   def update
     if shot.update shot_params
-      redirect_to [:admin, :shots]
+      redirect_to [:admin, :shots], flash: {notice: "Shot updated."}
     else
       render :edit
     end
