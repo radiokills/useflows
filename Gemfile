@@ -73,3 +73,6 @@ group :development do
   gem 'quiet_assets'
 end
 
+gem 'asset_sync'
+
+
