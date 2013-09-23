@@ -1,5 +1,172 @@
 //= require_self
 
+html, body, input, textarea, button
+  font-family: "Helvetica Neue", helvetica, sans-serif
+  font-size: 16px
+
+a
+  color: #333
+
 html, body
   margin: 0px
   padding: 0px
+
+.nav-wrap
+  .header, .nav
+    display: block
+
+  .header
+    padding-top: 10px
+    padding-bottom: 10px
+    a
+      color: black
+      text-decoration: none
+
+    span.mission
+      color: #666
+
+    .header-inner-wrap
+      max-width: 960px
+      margin: 0px auto
+
+      a.new_shot
+        float: right
+        display: inline-block
+        background-color: black
+        color: white
+        padding-left: 3px
+        padding-right: 3px
+
+.content
+  .content-inner-wrap
+    margin: 0 auto
+    max-width: 960px
+
+    ul, ul li
+      list-style: none
+      margin: 0px
+      padding: 0px
+
+    .shots-wrap
+      float: none
+      clear: both
+
+      .shots
+        .shots-row
+          .shot
+            display: inline-block
+            float: left
+            width: 400px
+            margin: 40px
+
+            a
+              text-decoration: none
+          .url, .ago
+            color: #CCC
+            a
+              color: #CCC
+
+
+.shot-form
+  display: none
+  position: fixed
+  top: 0px
+  left: 0px
+  bottom: 0px
+  right: 0px
+  width: 100%
+  height: 100%
+
+  .shot-form-inner-wrap
+    display: block
+    position: relative
+    margin: 0 auto
+
+    .shot-modal
+      background-color: #F2F2F2
+      max-width: 400px
+      margin: 0 auto
+      margin-top: 150px
+      border-radius: 2px
+      box-shadow: 1px 1px 3px #333
+
+      .shot-modal-wrap
+        padding: 10px
+        width: 100%
+        position: relative
+
+        .toolbar
+          a.close
+            position: absolute
+            top: 0px
+            right: 30px
+        p.foot
+          text-align: center
+        p
+          .info
+            float: right
+            padding-right: 10px
+            font-style: italic
+            color: #666
+            margin-right: 15px
+        label
+          width: 99%
+          p
+            margin: 0px
+            padding: 0px
+            margin-top: 3px
+            padding-bottom: 2px
+            padding-right: 0px
+
+        label, label p, input, textarea, button
+          font-size: 16px
+
+        .field_with_errors
+          input, textarea, button
+            border: 1px solid #FF0000
+
+        input, textarea
+          width: 370px
+          border: 1px solid #CCC
+          border-radius: 2px
+          padding-left: 3px
+          padding-right: 3px
+
+        table.who
+          width: 378px
+          border-collapse: collapse
+          margin: 0px
+          padding: 0px
+
+          td
+            text-align: center
+            input
+              width: 160px
+              float: left
+
+          td:last-child
+            input
+              float: right
+
+        .submit-wrap
+          display: block
+          width: 300px
+          margin: 0 auto
+          margin-top: 20px
+          text-align: center
+          input
+            width: 100%
+
+.shot-form.visible
+  display: block
+
+.next-wrap
+  clear: both
+  float: none
+  display: block
+  width: 100%
+
+  text-align: center
+  margin-top: 10px
+  margin-bottom: 10px
+

@@ -11,30 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130918084936) do
+ActiveRecord::Schema.define(version: 20130923104840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pattern_groups", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "shots", force: true do |t|
     t.string   "image"
     t.string   "url"
-    t.integer  "visible",          default: 0, null: false
+    t.integer  "visible",     default: 0, null: false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "pattern_group_id"
     t.string   "email"
     t.string   "tw_handler"
   end
-
-  add_index "shots", ["pattern_group_id"], name: "index_shots_on_pattern_group_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

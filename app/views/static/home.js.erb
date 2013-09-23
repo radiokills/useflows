@@ -1,0 +1,3 @@
+var content = $("<%=j render 'feed' %>");
+$("div.shots").append($(".shots-row",content));
+$(".shots-wrap .next-wrap").replaceWith($(".next-wrap",content));

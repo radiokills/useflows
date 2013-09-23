@@ -1,6 +1,7 @@
 Uxscreen::Application.routes.draw do
 
   root "static#home"
+  post "/" => "static#create"
 
   get 'admin' => "static#admin"
 

@@ -7,11 +7,12 @@
     %thead
       %tr
         %th ID
-        %th PG
-        %th Email / TW
+        %th Tags
         %th URL
         %th Visible
         %th Image
+        %th Email / TW
+
         %th Updated
         %th Tools
 
@@ -20,15 +21,14 @@
         %tr
           %th=shot.id
           %th
-            = shot.pattern_group
-          %td
-            = [shot.email.present? ? shot.email : nil, shot.tw_handler.present? ? shot.tw_handler : nil].compact.join("/")
+            = shot.tag_list
           %td=link_to shot.small_url, shot.url, target: "_blank"
           %td
             = shot.visible? ? raw("&nbsp;") : "Hidden"
           %td
             = shot.image.present? ? raw("&nbsp;") : "No image"
-
+          %td
+            = [shot.email.present? ? shot.email : nil, shot.tw_handler.present? ? shot.tw_handler : nil].compact.join("/")
           %td="#{time_ago_in_words(shot.updated_at)} ago"
           %td
             =link_to "Remove", [:admin, shot], method: :delete

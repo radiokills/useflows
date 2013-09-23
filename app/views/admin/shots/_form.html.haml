@@ -1,7 +1,7 @@
 = form_for [:admin, shot] do |f|
 
-  - if f.object.errors.any?
-    - f.object.errors.each do |e|
+  - if f.object.errors.full_messages.any?
+    - f.object.errors.full_messages.each do |e|
       = e
 
   %fieldset
@@ -14,16 +14,6 @@
         -if f.object.errors[:description].any?
           %br/
           -f.object.errors[:description].each do |error|
-            %small.error=error
-
-    .row
-      .small-2.columns{class: f.object.errors[:pattern_group_id].any? ? "error" : ""}
-        = f.label :pattern_group_id, "Pattern Group", class: "right inline"
-      .small-10.columns{class: f.object.errors[:pattern_group_id].any? ? "error" : ""}
-        = f.select :pattern_group_id, PatternGroup.all.map{ |pg| [pg.name, pg.id] }
-        -if f.object.errors[:pattern_group_id].any?
-          %br/
-          -f.object.errors[:pattern_group_id].each do |error|
             %small.error=error
 
     .row
@@ -56,17 +46,15 @@
           -f.object.errors[:tw_handler].each do |error|
             %small.error=error
 
-
-    -#
-      .row
-        .small-2.columns{class: f.object.errors[:tag_list].any? ? "error" : ""}
-          = f.label :tag_list, "Tags", class: "right inline"
-        .small-10.columns{class: f.object.errors[:tag_list].any? ? "error" : ""}
-          = f.text_field :tag_list
-          -if f.object.errors[:tag_list].any?
-            %br/
-            -f.object.errors[:tag_list].each do |error|
-              %small.error=error
+    .row
+      .small-2.columns{class: f.object.errors[:tag_list].any? ? "error" : ""}
+        = f.label :tag_list, "Tags", class: "right inline"
+      .small-10.columns{class: f.object.errors[:tag_list].any? ? "error" : ""}
+        = f.text_field :tag_list
+        -if f.object.errors[:tag_list].any?
+          %br/
+          -f.object.errors[:tag_list].each do |error|
+            %small.error=error
 
     .row
       .small-2.columns{class: f.object.errors[:image].any? ? "error" : ""}

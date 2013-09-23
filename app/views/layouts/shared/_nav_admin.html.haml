@@ -4,7 +4,7 @@
       %li.name
         %h1
           =link_to root_path do
-            = raw "<span>ux</span>screen"
+            = raw "mirkopatterns"
 
       %li.toggle-topbar.menu-icon
         =link_to "#" do
@@ -16,12 +16,4 @@
           =link_to "New shot", [:new, :admin, :shot]
         %li
           =link_to "Shots", [:admin, :shots]
-        %li.divider
-        %li
-          =link_to "New PG", [:new, :admin, :pattern_group]
-        %li
-          =link_to "PG's", [:admin, :pattern_groups]
-        %li.divider
-        %li
-          =link_to "Users", "#"
 

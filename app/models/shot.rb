@@ -1,23 +1,25 @@
 class Shot < ActiveRecord::Base
 
-  IMAGE_MUST_WIDTH=360
-  IMAGE_MUST_HEIGHT=360
+  IMAGE_MUST_WIDTH=400
+  IMAGE_MUST_HEIGHT=300
 
-  belongs_to :pattern_group
-
-  # acts_as_taggable
+  paginates_per 6
+  acts_as_taggable
   mount_uploader :image, ShotsUploader
 
   attr_accessor :dimensions, :replaced
 
-  # validates :tag_list, presence: true
+  validates :tag_list, presence: true
   validates :description, presence: true, unless: -> { image.present? }
   validates :url, presence: true
 
-  validates :pattern_group, associated: true
-  validates :pattern_group_id, presence: true
+  validates :tw_handler, format: {with: /\A[a-z0-9_]+/i, message: "is invalid! *(skip @)"}, if: -> { tw_handler.present? }
+  validates :email, format: {with: /\@/, message: "is invalid! "}, if: -> { email.present? }
+  validates :description, length: { maximum: 140 }, if: -> { description.present? }
 
   default_scope -> { order(updated_at: :desc) }
+
+  scope :visible, -> { where(visible: 1) }
 
   def image= object
     super object
@@ -31,6 +33,12 @@ class Shot < ActiveRecord::Base
       end
     else
       errors.add(:image, 'dimensions are invalid')
+    end
+  end
+
+  validate do |shot|
+    if not shot.image.present? and shot.visible?
+      errors.add(:visible, 'can be set only if image is present')
     end
   end
 

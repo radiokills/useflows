@@ -1,0 +1,52 @@
+%section.shot-form{class: @submited ? "visible" : ""}
+  .shot-form-inner-wrap
+    .shot-modal
+      .shot-modal-wrap
+        .content
+          = form_for shot, url: root_path, multipart: true do |f|
+            - if f.object.errors.full_messages.any?
+              %p Sorry. You have some errors here.
+              %ul.errors
+                - f.object.errors.full_messages.each do |e|
+                  %li.error= e
+
+            %label
+              %p
+                %strong Describe
+                micro interaction you think is missing from our lovely site
+                %span.info * 140 chars max
+              = f.text_area :description
+
+            %label
+              %p
+                %strong URL
+                %span.info * where we can capture a movie?
+              = f.url_field :url
+
+            %label
+              %p
+                %strong Tags
+                %span.info * comma-separated list
+              = f.text_field :tag_list
+
+            %p
+              Who are you?
+              %span.info * Optional. We won't tell.
+
+            %table.who
+              %tr
+                %td
+                  %label
+                    Twitter
+                    =f.text_field :tw_handler, placeholder: "otobrglez"
+
+                %td
+                  %label
+                    Email
+                    =f.email_field :email
+
+            .submit-wrap
+              = f.submit "Submit shot request"
+
+            %p.foot
+              %small Shot will be visible after we record GIF.

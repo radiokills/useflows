@@ -1,0 +1,35 @@
+- if shots.present? and shots.any?
+  .shots-wrap
+    .shots
+      - shots.each_slice(2) do |row|
+        .shots-row
+          - row.each_with_index do |shot, r_index|
+            .shot
+              .shot-wrap
+                .image=image_tag shot.image
+                .tag_list
+                  -shot.tag_list.map do |t|
+                    = link_to "##{t}", root_path(tag: t)
+                  - end.join(", ")
+
+
+                - if shot.description.present?
+                  .description=shot.description
+
+                %small.ago
+                  ="#{time_ago_in_words shot.updated_at} ago"
+
+                - if shot.url.present?
+                  \/
+                  %small.url=link_to shot.small_url, shot.url, target: "_blank"
+
+
+                - if shot.tw_handler.present?
+                  =link_to "@#{shot.tw_handler}", "http://twitter.com/#{shot.tw_handler}"
+                - else
+                  =raw "&nbsp;"
+
+    .next-wrap
+      = link_to_next_page shots, "Next", remote: true
+- else
+  %p No shots here. Move along...

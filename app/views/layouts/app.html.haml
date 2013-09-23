@@ -4,26 +4,23 @@
     %title= content_for?(:title) ? yield(:title) : "uxscreen"
     = stylesheet_link_tag    "app", media: "all"
     = javascript_include_tag "vendor/custom.modernizr"
-
-
     = csrf_meta_tags
-
-    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1.0"}
 %body
 
   .nav-wrap
-    %header
-      =link_to "uxscreen", root_path, class: :logo
-      =link_to "#", "#", class: :more
-
-
-    %nav
-    %section.new-shot
-
+    %header.header
+      .header-inner-wrap
+        =link_to "mirkopatterns", root_path, class: :logo
+        \/
+        %span.mission place for your #shot of ux.
+        =link_to "+ new shot", root_path, class: :new_shot
 
   %section.content
-    = yield
+    .content-inner-wrap
+      = yield
 
+  = render "shots/form"
 
   = javascript_include_tag "app"
 
