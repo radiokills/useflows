@@ -5,5 +5,3 @@
 #= require_tree ./app/jquery
 #= require_self
 
-# App goes here
-
