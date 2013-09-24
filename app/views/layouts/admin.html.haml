@@ -13,5 +13,10 @@
   = render "layouts/shared/nav_admin"
 
   #mainContent
+
+    - if flash[:notice].present?
+      .row
+        %p=flash[:notice]
+
     .row
       = yield

@@ -35,7 +35,7 @@ class Admin::ShotsController < Admin::BaseController
 
   def destroy
     shot.destroy
-    redirect_to [:admin, :shots]
+    redirect_to [:admin, :shots], flash: {notice: "Shot was deleted."}
   end
 
   def edit

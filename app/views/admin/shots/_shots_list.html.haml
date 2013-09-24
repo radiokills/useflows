@@ -7,29 +7,30 @@
     %thead
       %tr
         %th ID
+        %th Updated
+        %th State
         %th Tags
         %th URL
-        %th Visible
-        %th Image
         %th Email / TW
 
-        %th Updated
         %th Tools
 
     %tbody
       - shots.each do |shot|
-        %tr
+        %tr{class: [(shot.visible? ? "visible" : "hidden"), (shot.image.present? ? "with_image" : "no_image")]}
           %th=shot.id
-          %th
-            = shot.tag_list
+          %td="#{time_ago_in_words(shot.updated_at)} ago"
+          %td
+            = [(shot.visible? ? nil : "Hidden"), (shot.image.present? ? nil : "No image")].compact.join(", ")
+
+          %td
+            = raw shot.tag_list.map {|t| link_to(t, root_path(tag: t))}.join(", ")
+
           %td=link_to shot.small_url, shot.url, target: "_blank"
-          %td
-            = shot.visible? ? raw("&nbsp;") : "Hidden"
-          %td
-            = shot.image.present? ? raw("&nbsp;") : "No image"
+
           %td
             = [shot.email.present? ? shot.email : nil, shot.tw_handler.present? ? shot.tw_handler : nil].compact.join("/")
-          %td="#{time_ago_in_words(shot.updated_at)} ago"
+
           %td
             =link_to "Remove", [:admin, shot], method: :delete
             |
