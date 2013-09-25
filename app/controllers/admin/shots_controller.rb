@@ -1,5 +1,7 @@
 class Admin::ShotsController < Admin::BaseController
 
+ skip_before_filter :verify_authenticity_token, :only => [:create]
+
   expose(:shots){ Shot.all.page(params[:page]||1).per(params[:per]||20) }
   expose(:shot, attributes: :shot_params){
     if params[:id].present?
@@ -17,11 +19,26 @@ class Admin::ShotsController < Admin::BaseController
   def show
   end
 
+  def toggle_visible
+    shot.toggle_visible!
+
+    respond_to do |f|
+      f.html { redirect_to [:admin, :shots], flash: {notice:"Shot visibility has changed."} }
+      f.js { render :index }
+    end
+  end
+
   def create
     if shot.save
-      redirect_to [:admin, :shots], flash: {notice: "Shot updated."}
+      respond_to do |f|
+        f.html { redirect_to [:admin, :shots], flash: {notice: "Shot updated."} }
+        f.json { render json: shot }
+      end
     else
-      render :edit
+      respond_to do |f|
+        f.json { render json: shot.errors }
+        f.html { render :edit }
+      end
     end
   end
 

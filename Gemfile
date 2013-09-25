@@ -33,6 +33,7 @@ gem 'kaminari'
 
 gem 'heroku'
 
+gem 'rest-client'
 
 group :doc do
   gem 'sdoc', require: false

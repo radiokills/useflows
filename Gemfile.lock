@@ -310,6 +310,7 @@ DEPENDENCIES
   pry-remote
   quiet_assets
   rails (= 4.0.0)
+  rest-client
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc

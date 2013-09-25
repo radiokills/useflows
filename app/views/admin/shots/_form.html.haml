@@ -1,4 +1,4 @@
-= form_for [:admin, shot] do |f|
+= form_for [:admin, shot], multipart: true do |f|
 
   - if f.object.errors.full_messages.any?
     - f.object.errors.full_messages.each do |e|

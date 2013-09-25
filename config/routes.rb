@@ -8,7 +8,9 @@ Uxscreen::Application.routes.draw do
   resources :shots, only: [:new, :create]
 
   namespace :admin do
-    resources :shots, :pattern_groups
+    resources :shots do
+      get :toggle_visible, on: :member
+    end
   end
 
 

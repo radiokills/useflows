@@ -26,13 +26,19 @@
           %td
             = raw shot.tag_list.map {|t| link_to(t, root_path(tag: t))}.join(", ")
 
-          %td=link_to shot.small_url, shot.url, target: "_blank"
-
+          %td
+            -if shot.url.present?
+              =link_to shot.small_url, shot.url, target: "_blank"
+            - else
+              = raw("&nbsp;")
           %td
             = [shot.email.present? ? shot.email : nil, shot.tw_handler.present? ? shot.tw_handler : nil].compact.join("/")
 
           %td
             =link_to "Remove", [:admin, shot], method: :delete
+            |
+            - if shot.hidden? and shot.valid?
+              =link_to "Show", [:toggle_visible, :admin, shot], remote: true
             |
             =link_to "Edit", [:edit, :admin, shot]
 - else

@@ -11,7 +11,7 @@ class Shot < ActiveRecord::Base
 
   validates :tag_list, presence: true
   validates :description, presence: true, unless: -> { image.present? }
-  validates :url, presence: true
+  validates :url, presence: true, unless: -> { image.present? }
 
   validates :tw_handler, format: {with: /\A[a-z0-9_]+/i, message: "is invalid! *(skip @)"}, if: -> { tw_handler.present? }
   validates :email, format: {with: /\@/, message: "is invalid! "}, if: -> { email.present? }
@@ -48,6 +48,14 @@ class Shot < ActiveRecord::Base
 
   def hidden?
     not visible?
+  end
+
+  def toggle_visible!
+    if visible?
+      update(visible: 0)
+    else
+      update(visible: 1)
+    end
   end
 
 end
