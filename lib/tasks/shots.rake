@@ -19,8 +19,12 @@ def upload_file tag_list, image_path
     headers: { :accept => :json, content_type: :json }
   )
 
-  response = request.execute
-  Oj.load(response)
+  begin
+    response = request.execute
+    Oj.load(response)
+  rescue
+    "Not. Sure."
+  end
 end
 
 def tags_from file
