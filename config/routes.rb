@@ -5,13 +5,18 @@ Uxscreen::Application.routes.draw do
 
   get 'admin' => "static#admin"
 
+  get '/auth/twitter/callback' => 'twitter#callback'
+
   resources :shots, only: [:new, :create]
+
+  resources :sessions, only: [:destroy]
 
   namespace :admin do
     resources :shots do
       get :toggle_visible, on: :member
     end
   end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

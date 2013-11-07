@@ -17,12 +17,14 @@ gem 'zurb-foundation'
 
 gem 'multi_json'
 gem 'oj'
-
+gem 'rmagick'
 gem 'haml-rails'
 
 gem 'mini_magick'
 gem 'carrierwave'
-gem 'fog'
+group :production do
+  gem 'fog'
+end
 
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 
@@ -34,6 +36,7 @@ gem 'kaminari'
 gem 'heroku'
 
 gem 'rest-client'
+gem 'omniauth-twitter'
 
 group :doc do
   gem 'sdoc', require: false

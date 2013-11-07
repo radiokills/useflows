@@ -1,0 +1,6 @@
+- if current_user
+  = current_user.nick
+  = image_tag current_user.image_url
+  = link_to 'Log Out', session_path(1), method: :delete
+- else
+  = link_to 'sign in wiht twitter', '/auth/twitter'

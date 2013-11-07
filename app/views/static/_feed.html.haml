@@ -6,7 +6,8 @@
           - row.each_with_index do |shot, r_index|
             .shot
               .shot-wrap
-                .image=image_tag shot.image
+                .image
+                  =image_tag shot.image.still, class: 'faded still'
                 - if shot.description.present?
                   .description=shot.description
 

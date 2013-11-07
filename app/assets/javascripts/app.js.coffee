@@ -12,4 +12,4 @@ $(window).load -> NProgress.done()
 $(document).ajaxStart -> NProgress.start()
 
 $(document).ajaxStop -> NProgress.done()
-
+$('.still').image_swapper()

@@ -11,10 +11,16 @@
   .nav-wrap
     %header.header
       .header-inner-wrap
-        =link_to "mirkopatterns", root_path, class: :logo
+        .pull-right
+          = render 'layouts/shared/user'
+      %hr
+      .header-inner-wrap
+        = link_to "mirkopatterns", root_path, class: :logo
         \/
         %span.mission place for your #shot of ux.
-        =link_to "+ new shot", root_path, class: :new_shot
+        \/
+        = link_to "+ new shot", root_path, class: :new_shot
+
 
   %section.content
     .content-inner-wrap
