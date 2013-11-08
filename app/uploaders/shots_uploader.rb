@@ -18,12 +18,12 @@ class ShotsUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb do
+    process :remove_animation
     process :resize_to_fill => [20, 20]
   end
 
   version :still do
     process :remove_animation
-    process :make_it_bright
   end
 
   def extension_white_list
@@ -36,16 +36,6 @@ class ShotsUploader < CarrierWave::Uploader::Base
     end
   end
 
-  def make_it_bright
-    manipulate! do |img|
-      img.modulate( 1.3, 0.0, 1.0).selective_blur_channel(0, 1, '40%')
-      img.opacity = 0.1
-      img
-      #img.sketch
-      #img.selective_blur_channel(0, 1, '40%')
 
-
-    end
-  end
 
 end

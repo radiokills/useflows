@@ -2,7 +2,7 @@ require 'rest_client'
 require 'oj'
 
 def upload_file tag_list, image_path
-  host = ENV["host"] || "uxscreen.dev"
+  host = ENV["host"] || "www.useflows.com"
   url = "http://#{host}/admin/shots.json"
   request = RestClient::Request.new(
     method: :post,
@@ -48,6 +48,7 @@ namespace :shots do
       full_path = File.join(Dir.getwd, file)
       tags = tags_from(file)
       puts upload_file(tags, full_path)
+      puts full_path
     end
 
   end

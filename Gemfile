@@ -47,7 +47,7 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara'
   # gem 'poltergeist'
-
+  gem 'dotenv-rails'
   gem 'shoulda-matchers'
 end
 
@@ -61,7 +61,7 @@ group :test, :development do
 
   gem 'pry-rails'
   gem 'pry-doc'
-  gem 'dotenv-rails'
+
   gem 'launchy'
 
   gem 'foreman'
