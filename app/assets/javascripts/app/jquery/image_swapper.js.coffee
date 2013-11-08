@@ -13,12 +13,13 @@ class ImageSwapper
 
   mouse_in: (e) =>
     img = $(e.currentTarget)
+    $('.still').addClass('faded')
     img.removeClass('faded')
     @switch_image(img)
 
   mouse_out: (e) =>
     img = $(e.currentTarget)
-    img.addClass('faded')
+    $('.still').removeClass('faded')
     @switch_image(img)
 
 
