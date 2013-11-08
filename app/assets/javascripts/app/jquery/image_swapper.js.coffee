@@ -1,10 +1,15 @@
 class ImageSwapper
 
   constructor: (element)->
-    console.log 'initialized'
     @image = $(element)
     @image_src = @image.attr('src')
-    @image.hover(@mouse_in, @mouse_out)
+    $(document).on('mouseenter', 'img', (e)=>
+      @mouse_in(e)
+    )
+
+    $(document).on('mouseleave', 'img', (e)=>
+      @mouse_out(e)
+    )
 
   mouse_in: (e) =>
     img = $(e.currentTarget)
@@ -36,4 +41,4 @@ class ImageSwapper
 
 
 $.fn.image_swapper = () ->
-  new ImageSwapper(this)
+  new ImageSwapper()
