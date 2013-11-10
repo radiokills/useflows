@@ -1,5 +1,13 @@
 = render "feed"
 %hr
-- tag_cloud(Shot.tag_counts, %w(small medium big large)) do |tag, css_class|
-  %span{:class => css_class}
-    = link_to "##{tag.name}", root_path(tag: tag.name)
+.row
+  .columns{class: current_user ? 'large-6' : 'large-12'}
+    %h3
+      All tags
+    = render partial: 'tag_cloud', locals: {tags: Shot.tag_counts}
+  - if current_user
+    .large-6.columns
+      %h3
+        My Tags
+      #users_tags
+        = render partial: 'tag_cloud', locals: {tags: current_user.shots.tag_counts}

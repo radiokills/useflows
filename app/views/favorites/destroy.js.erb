@@ -1,2 +1,3 @@
 var div_id = "<%= dom_id(shot, :favorite)%>"
 $("#"+div_id).html('<%=j render partial: "favorites/create_link", locals: {shot: shot}%>')
+$('#users_tags').html("<%=j render partial: 'static/tag_cloud', locals: {tags: current_user.shots.tag_counts}%>")
