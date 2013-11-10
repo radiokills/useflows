@@ -7,7 +7,9 @@ Uxscreen::Application.routes.draw do
 
   get '/auth/twitter/callback' => 'twitter#callback'
 
-  resources :shots, only: [:new, :create]
+  resources :shots, only: [:new, :create] do
+    resources :favorites
+  end
 
   resources :sessions, only: [:destroy]
 

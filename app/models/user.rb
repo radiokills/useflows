@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
 
+  has_many :favorites
+  has_many :shots, through: :favorites
+
   def self.from_omniauth(auth)
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
   end

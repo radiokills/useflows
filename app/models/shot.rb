@@ -1,5 +1,8 @@
 class Shot < ActiveRecord::Base
 
+  has_many :favorites
+  has_many :users, through: :favorites
+
   IMAGE_MUST_WIDTH=400
   IMAGE_MUST_HEIGHT=300
 

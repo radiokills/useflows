@@ -1,0 +1,2 @@
+var div_id = "<%= dom_id(shot, :favorite)%>"
+$("#"+div_id).html('<%=j render partial: "favorites/create_link", locals: {shot: shot}%>')

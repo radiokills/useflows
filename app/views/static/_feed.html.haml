@@ -14,6 +14,12 @@
                 .tag_list
                   -shot.tag_list.map do |t|
                     .tag= link_to "##{t}", root_path(tag: t)
+                - if current_user
+                  .favorite{id: dom_id(shot, :favorite)}
+                    - if current_user.shots.include? shot
+                      = render partial: 'favorites/destroy_link', locals: {shot: shot}
+                    - else
+                      = render partial: 'favorites/create_link', locals: {shot: shot}
 
 
                 .more

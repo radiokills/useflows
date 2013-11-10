@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'dotenv-rails'
 gem 'rails', '4.0.0'
 gem 'mysql2'
 gem 'pg'
