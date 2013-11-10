@@ -1,1 +1,5 @@
 = render "feed"
+%hr
+- tag_cloud(Shot.tag_counts, %w(small medium big large)) do |tag, css_class|
+  %span{:class => css_class}
+    = link_to "##{tag.name}", root_path(tag: tag.name)
