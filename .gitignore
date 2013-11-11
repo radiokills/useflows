@@ -1,3 +1,6 @@
+/*.gif
+/*.png
+/*.jpg
 public/assets
 assets_*
 .DS_Store
