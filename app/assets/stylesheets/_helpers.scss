@@ -1,0 +1,47 @@
+.fw{
+  width: 100%;
+  float: left;
+}
+// Micro clearfix
+.cf:before, .cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+
+/*
+ * Image replacement
+ */
+// Method 1
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+  }
+}
+// Method 2 - use if box size depends on font-size (EM units)
+.ir2 { display: block; text-indent: -999em; overflow: hidden; }
+// Method 3 - use if box size independent of font-size
+.ir3 { font: 0/0 a; text-shadow: none; color: transparent; }
+
+//Hide from screenreaders and browsers */
+.hidden { display: none !important; visibility: hidden; }
+
+// Hide visually, but have it available for screenreaders
+.visuallyhidden {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+}
+
+// Hide visually and from screenreaders, but maintain layout
+.invisible {
+  visibility: hidden;
+}
