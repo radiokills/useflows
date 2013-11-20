@@ -5,28 +5,103 @@
     = stylesheet_link_tag    "app", media: "all"
     = javascript_include_tag "vendor/custom.modernizr"
     = csrf_meta_tags
-    %meta{name:"viewport", content:"width=device-width, initial-scale=1.0"}
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400,700", :rel => "stylesheet", :type => "text/css"}
 %body
+  .container
+    %header
+      %nav.row
+        %a.logo
+        %ul
+          %li.useflows
+            = link_to '/' do
+              UseFlows
+              %span 499
+              %i
+            %ul.dropdown
+              %li
+                %a{:href => "#"} All useflows
+                499
+              %li
+                %a{:href => "#"} navigation
+                12
+              %li
+                %a{:href => "#"} add to cart
+                30
+              %li
+                %a{:href => "#"} forms
+                8
+              %li
+                %a{:href => "#"} dropdown
+                16
+              %li
+                %a{:href => "#"} navigation
+                12
+              %li
+                %a{:href => "#"} add to cart
+                30
+              %li
+                %a{:href => "#"} forms
+                8
+              %li
+                %a{:href => "#"} dropdown
+                16
+          %li.favorites
+            %a{:href => "#"}
+              %i
+              %span 50
+            %ul.dropdown
+              %li
+                %a{:href => "#"} All favourited useflows
+                50
+              %li
+                %a{:href => "#"} navigation
+                12
+              %li
+                %a{:href => "#"} add to cart
+                30
+              %li
+                %a{:href => "#"} forms
+                8
+              %li
+                %a{:href => "#"} dropdown
+                16
+              %li
+                %a{:href => "#"} navigation
+                12
+              %li
+                %a{:href => "#"} add to cart
+                30
+              %li
+                %a{:href => "#"} forms
+                8
+              %li
+                %a{:href => "#"} dropdown
+                16
+          %li.new
+            %a{:href => "#"}
+              %i
+        .search
+          %form#searchForm{:action => ""}
+            %input{:placeholder => "Try searching for something ...", :type => "text"}
+            %input.btn{:type => "submit", :value => ""}
+        %ul.profile
+          %li
+            %a{:href => "#"}
+              = image_tag 'display-pic.png'
+            %ul.dropdown
+              %li
+                %a{:href => "#"} Upload
+              %li
+                %a{:href => "#"} Settings
+              %li
+                %a{:href => "#"} Sign out
 
-  .nav-wrap
-    %header.header
-      .header-inner-wrap
-        .pull-right
-          = render 'layouts/shared/user'
-      %hr
-      .header-inner-wrap
-        = link_to "mirkopatterns", root_path, class: :logo
-        \/
-        %span.mission place for your #shot of ux.
-        \/
-        = link_to "+ new shot", root_path, class: :new_shot
 
-
-  %section.content
-    .content-inner-wrap
+    .fw.content
       = yield
 
-  = render "shots/form"
+    = render "shots/form"
 
   = javascript_include_tag "app"
 

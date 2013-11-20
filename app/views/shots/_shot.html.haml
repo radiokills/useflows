@@ -1,33 +1,33 @@
-.shot
+%li.shot.item
+  .overlay
   .shot-wrap
-    .image
-      = link_to shot do
-        =image_tag shot.image.still, class: 'still'
+    = link_to shot do
+      =image_tag shot.image.still, class: 'still'
     - if shot.description.present?
       .description=shot.description
+    .meta
+      .tags
+        %ul
+          -shot.tag_list.map do |t|
+            %li= link_to "##{t}", root_path(tag: t)
+      .more
+        %small.ago
+          ="#{time_ago_in_words shot.updated_at} ago"
 
-    .tag_list
-      -shot.tag_list.map do |t|
-        .tag= link_to "##{t}", root_path(tag: t)
-    - if current_user
-      .favorite{id: dom_id(shot, :favorite)}
-        - if current_user.shots.include? shot
-          = render partial: 'favorites/destroy_link', locals: {shot: shot}
-        - else
-          = render partial: 'favorites/create_link', locals: {shot: shot}
-
-
-    .more
-      %small.ago
-        ="#{time_ago_in_words shot.updated_at} ago"
-
-      - if shot.url.present?
-        \/
-        %small.url=link_to shot.small_url, shot.url, target: "_blank"
+        - if shot.url.present?
+          \/
+          %small.url=link_to shot.small_url, shot.url, target: "_blank"
 
 
-    - if shot.tw_handler.present?
-      via
-      =link_to "@#{shot.tw_handler}", "http://twitter.com/#{shot.tw_handler}"
-    - else
-      =raw "&nbsp;"
+      - if shot.tw_handler.present?
+        via
+        =link_to "@#{shot.tw_handler}", "http://twitter.com/#{shot.tw_handler}"
+      - else
+        =raw "&nbsp;"
+
+      - if current_user
+        .favorite{id: dom_id(shot, :favorite)}
+          - if current_user.shots.include? shot
+            = render partial: 'favorites/destroy_link', locals: {shot: shot}
+          - else
+            = render partial: 'favorites/create_link', locals: {shot: shot}

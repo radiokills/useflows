@@ -1,10 +1,7 @@
 - if shots.present? and shots.any?
-  .shots-wrap
-    .shots
-      - shots.each_slice(2) do |row|
-        .shots-row
-          - row.each_with_index do |shot, r_index|
-            = render partial: 'shots/shot', locals: {shot: shot}
+  %ul#newest-items.item-list
+    - shots.each do |shot|
+      = render partial: 'shots/shot', locals: {shot: shot}
 
     .next-wrap
       = link_to_next_page shots, "Next", remote: true

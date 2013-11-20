@@ -13,3 +13,11 @@ $(document).ajaxStart -> NProgress.start()
 
 $(document).ajaxStop -> NProgress.done()
 $(document).image_swapper()
+
+$(window).load ->
+  container = document.querySelector('.item-list');
+  window.pckry = new Packery( container, {
+
+        itemSelector: '.item',
+        gutter: 80
+      });

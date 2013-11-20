@@ -3,23 +3,23 @@ class ImageSwapper
   constructor: (element)->
     @image = $(element)
     @image_src = @image.attr('src')
-    $(document).on('mouseenter', 'img', (e)=>
+    $(document).on('mouseenter', '.still', (e)=>
       @mouse_in(e)
     )
 
-    $(document).on('mouseleave', 'img', (e)=>
+    $(document).on('mouseleave', '.still', (e)=>
       @mouse_out(e)
     )
 
   mouse_in: (e) =>
     img = $(e.currentTarget)
-    $('.still').addClass('faded')
-    img.removeClass('faded')
+    $('.still').closest('.item').addClass('faded')
+    img.closest('.item').removeClass('faded')
     @switch_image(img)
 
   mouse_out: (e) =>
     img = $(e.currentTarget)
-    $('.still').removeClass('faded')
+    $('.still').closest('.item').removeClass('faded')
     @switch_image(img)
 
 
