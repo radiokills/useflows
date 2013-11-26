@@ -34,6 +34,9 @@
                 %li
                   %a{:href => "#"} All favourited useflows
                   = current_user.shots.count.to_s
+                - (current_user.shots.tag_counts.sort{ |s| s.count}[0..10]).each do |tag|
+                  %li
+                    = link_to  "#{tag.name.titleize} #{tag.count}", "/?tag=#{tag.name}&users_only=true"
           %li.new
             %a{:href => "#"}
               %i
@@ -44,14 +47,17 @@
         %ul.profile
           %li
             %a{:href => "#"}
-              = image_tag 'display-pic.png'
+              - if current_user
+                = image_tag current_user.image_url, style: 'width: 60px'
+              - else
+                = image_tag 'display-pic.png'
             %ul.dropdown
-              %li
-                %a{:href => "#"} Upload
-              %li
-                %a{:href => "#"} Settings
-              %li
-                %a{:href => "#"} Sign out
+              - if current_user
+                %li
+                  = link_to 'Log Out', session_path(1), method: :delete
+              - else
+                %li
+                  = link_to 'Log in with twitter', '/auth/twitter'
 
 
     .fw.content

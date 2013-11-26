@@ -4,7 +4,11 @@ class StaticController < ApplicationController
   respond_to "js", only: [:create, :home]
 
   expose(:shots, attributes: :page_params) do
-    shots = Shot.visible
+    if current_user && params[:users_only].present?
+      shots = current_user.shots
+    else
+      shots = Shot.visible
+    end
     shots = shots.tagged_with(params[:tag]) if params[:tag].present?
     shots.page(params[:page] || 1)
   end
