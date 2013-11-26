@@ -16,68 +16,24 @@
           %li.useflows
             = link_to '/' do
               UseFlows
-              %span 499
+              %span= Shot.count.to_s
               %i
             %ul.dropdown
               %li
-                %a{:href => "#"} All useflows
-                499
-              %li
-                %a{:href => "#"} navigation
-                12
-              %li
-                %a{:href => "#"} add to cart
-                30
-              %li
-                %a{:href => "#"} forms
-                8
-              %li
-                %a{:href => "#"} dropdown
-                16
-              %li
-                %a{:href => "#"} navigation
-                12
-              %li
-                %a{:href => "#"} add to cart
-                30
-              %li
-                %a{:href => "#"} forms
-                8
-              %li
-                %a{:href => "#"} dropdown
-                16
-          %li.favorites
-            %a{:href => "#"}
-              %i
-              %span 50
-            %ul.dropdown
-              %li
-                %a{:href => "#"} All favourited useflows
-                50
-              %li
-                %a{:href => "#"} navigation
-                12
-              %li
-                %a{:href => "#"} add to cart
-                30
-              %li
-                %a{:href => "#"} forms
-                8
-              %li
-                %a{:href => "#"} dropdown
-                16
-              %li
-                %a{:href => "#"} navigation
-                12
-              %li
-                %a{:href => "#"} add to cart
-                30
-              %li
-                %a{:href => "#"} forms
-                8
-              %li
-                %a{:href => "#"} dropdown
-                16
+                %a{:href => "/"} All useflows
+                = Shot.count.to_s
+              - (Shot.tag_counts.sort{ |s| s.count}[0..10]).each do |tag|
+                %li
+                  = link_to  "#{tag.name.titleize} #{tag.count}", "/?tag=#{tag.name}"
+          - if current_user
+            %li.favorites
+              %a{:href => "#"}
+                %i
+                %span 50
+              %ul.dropdown
+                %li
+                  %a{:href => "#"} All favourited useflows
+                  = current_user.shots.count.to_s
           %li.new
             %a{:href => "#"}
               %i

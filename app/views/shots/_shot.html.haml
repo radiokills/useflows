@@ -3,9 +3,9 @@
   .shot-wrap
     = link_to shot do
       =image_tag shot.image.still, class: 'still'
-    - if shot.description.present?
-      .description=shot.description
     .meta
+      - if shot.description.present?
+        %h4.description=shot.description
       .tags
         %ul
           -shot.tag_list.map do |t|
