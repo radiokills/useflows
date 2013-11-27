@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= content_for?(:title) ? yield(:title) : "mirkopatterns"
+    %title= content_for?(:title) ? yield(:title) : "UseFlows"
     = stylesheet_link_tag    "app", media: "all"
     = javascript_include_tag "vendor/custom.modernizr"
     = csrf_meta_tags
@@ -11,7 +11,7 @@
   .container
     %header
       %nav.row
-        %a.logo
+        %a.logo{href: '/'}
         %ul
           %li.useflows
             = link_to '/' do
@@ -22,25 +22,25 @@
               %li
                 %a{:href => "/"} All useflows
                 = Shot.count.to_s
-              - (Shot.tag_counts.sort{ |s| s.count}[0..10]).each do |tag|
+              - (Shot.tag_counts.sort{ |x,y| y.count <=> x.count} [0..20]).each do |tag|
                 %li
                   = link_to  "#{tag.name.titleize} #{tag.count}", "/?tag=#{tag.name}"
           - if current_user
             %li.favorites
               %a{:href => "#"}
                 %i
-                %span 50
+                %span= current_user.shots.count.to_s
               %ul.dropdown
                 %li
                   %a{:href => "#"} All favourited useflows
                   = current_user.shots.count.to_s
-                - (current_user.shots.tag_counts.sort{ |s| s.count}[0..10]).each do |tag|
+                - (current_user.shots.tag_counts.sort{ |x,y| y.count <=> x.count} [0..20]).each do |tag|
                   %li
                     = link_to  "#{tag.name.titleize} #{tag.count}", "/?tag=#{tag.name}&users_only=true"
-          %li.new
+          %li.new.hidden
             %a{:href => "#"}
               %i
-        .search
+        .search.hidden
           %form#searchForm{:action => ""}
             %input{:placeholder => "Try searching for something ...", :type => "text"}
             %input.btn{:type => "submit", :value => ""}
