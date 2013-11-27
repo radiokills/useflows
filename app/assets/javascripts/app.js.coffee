@@ -21,3 +21,6 @@ $(window).load ->
         itemSelector: '.item',
         gutter: 80
       });
+
+
+

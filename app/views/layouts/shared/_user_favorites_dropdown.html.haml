@@ -1,0 +1,11 @@
+%li.favorites#user_favorites_dropdown
+  %a{:href => "#"}
+    %i
+    %span= current_user.shots.count.to_s
+  %ul.dropdown
+    %li
+      %a{:href => "#"} All favourited useflows
+      = current_user.shots.count.to_s
+    - (current_user.shots.tag_counts.sort{ |x,y| y.count <=> x.count} [0..20]).each do |tag|
+      %li
+        = link_to  "#{tag.name.titleize} #{tag.count}", "/?tag=#{tag.name}&users_only=true"

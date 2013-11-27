@@ -1,3 +1,7 @@
 var div_id = "<%= dom_id(shot, :favorite)%>"
 $("#"+div_id).html('<%=j render partial: "favorites/create_link", locals: {shot: shot}%>')
 $('#users_tags').html("<%=j render partial: 'static/tag_cloud', locals: {tags: current_user.shots.tag_counts}%>")
+$('#user_favorites_dropdown').replaceWithCallback("<%=j render partial: 'layouts/shared/user_favorites_dropdown'%>", function(){
+  $("#user_favorites_dropdown i").fadeOut(350).fadeIn(350).fadeOut(350).fadeIn(350)
+})
+
