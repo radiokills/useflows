@@ -1,9 +1,5 @@
 - if shots.present? and shots.any?
-  %ul#newest-items.item-list
-    - shots.each do |shot|
-      = render partial: 'shots/shot', locals: {shot: shot}
-
-    .next-wrap
-      = link_to_next_page shots, "Next", remote: true
+  - shots.each do |shot|
+    = render partial: 'shots/shot', locals: {shot: shot}
 - else
   %p No shots here. Move along...

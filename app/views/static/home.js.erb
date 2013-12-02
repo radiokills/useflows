@@ -1,3 +1,6 @@
 var content = $("<%=j render 'feed' %>");
-$("div.shots").append($(".shots-row",content));
+console.log(content)
+window.added=content
+$(".item-list").html(content);
 $(".shots-wrap .next-wrap").replaceWith($(".next-wrap",content));
+window.pckry.addItems(content);

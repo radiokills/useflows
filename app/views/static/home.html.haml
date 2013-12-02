@@ -1,4 +1,8 @@
-= render "feed"
+#feed_container
+  %ul#newest-items.item-list
+    = render "feed"
+.next-wrap
+  = link_to_next_page shots, "More...", remote: true
 %hr
 .row
   .columns{class: current_user ? 'large-6' : 'large-12'}
