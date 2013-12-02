@@ -1,8 +1,10 @@
+%h3
+  = main_title
 #feed_container
   %ul#newest-items.item-list
     = render "feed"
-.next-wrap
-  = link_to_next_page shots, "More...", remote: true
+#next-wrap
+  = link_to_next_page shots, "More...", remote: true, params: params
 %hr
 .row
   .columns{class: current_user ? 'large-6' : 'large-12'}

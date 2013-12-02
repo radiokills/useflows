@@ -1,1 +1,3 @@
 = render partial: 'shot', locals: {shot: shot}
+- content_for :title do
+  = "#{shot.description} - Useflows"
