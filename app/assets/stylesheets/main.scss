@@ -528,7 +528,6 @@ footer {
         }
         p.info {
             text-align: center;
-            margin: 5px 615px 0 615px;
             display: inline-block;
             i {
                 width: 23px;
@@ -537,13 +536,15 @@ footer {
                 cursor: pointer;
                 display: inline-block;
                 vertical-align: bottom;
+                position: absolute;
+                left: 49.5%;
+                margin-top: -5px;
             }
         }
         p.social {
             display: inline-block;
             float: right;
-            width: 500px;
-            margin-top: -33px;
+            width: 80px;
             text-align: right;
             a {
                 text-decoration: none;
@@ -691,5 +692,19 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-
+    .item-list {
+        .shot {
+            width: 100%;
+            a img {
+                max-width: 100%;
+            }
+            .meta {
+                min-width: 0;
+                max-width: 100%;
+                .tags li a {
+                    line-height: 36px;
+                }
+            }
+        }
+    }
 }
