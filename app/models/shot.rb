@@ -7,7 +7,7 @@ class Shot < ActiveRecord::Base
   IMAGE_MUST_HEIGHT=300
 
   paginates_per 6
-  #acts_as_taggable
+  acts_as_taggable
   mount_uploader :image, ShotsUploader
 
   attr_accessor :dimensions, :replaced
