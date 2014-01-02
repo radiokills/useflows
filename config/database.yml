@@ -3,5 +3,3 @@ production:
   encoding: unicode
   database: useflows_production
   pool: 5
-  username: useflows
-  password:
