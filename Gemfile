@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'dotenv-rails'
 gem 'rails', '4.0.0'
-gem 'mysql2'
+
 gem 'pg'
 
 gem 'sass-rails', '~> 4.0.0'
@@ -21,8 +21,10 @@ gem 'haml-rails'
 
 gem 'mini_magick'
 gem 'carrierwave'
+
 group :production do
   gem 'fog'
+  gem 'rails_12factor'
 end
 
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
@@ -54,7 +56,7 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'spork', '1.0.0rc3'
-
+  gem 'mysql2'
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'guard-pow'
@@ -77,5 +79,5 @@ group :development do
 end
 
 gem 'asset_sync'
-
+ruby '2.0.0'
 
