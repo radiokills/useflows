@@ -22,7 +22,7 @@ gem 'haml-rails'
 gem 'mini_magick'
 gem 'carrierwave'
 group :production do
-  #gem 'fog'
+  gem 'fog'
 end
 
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
@@ -76,6 +76,6 @@ group :development do
   gem 'quiet_assets'
 end
 
-# gem 'asset_sync'
+gem 'asset_sync'
 
 

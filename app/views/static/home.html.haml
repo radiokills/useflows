@@ -3,8 +3,15 @@
 #feed_container
   %ul#newest-items.item-list
     = render "feed"
-#next-wrap
-  = link_to_next_page shots, "More...", remote: true, params: params
+
+/ Theese are PREV/NEXT navigagation links
+= link_to_previous_page shots, 'Previous Page'
+= link_to_next_page shots, 'Next Page'
+
+/ If you want full pagination in form of << < 1 2 .... 10 11 > >> uncomment next line
+/ = paginate shots
+
+
 %hr
 .row
   .columns{class: current_user ? 'large-6' : 'large-12'}
