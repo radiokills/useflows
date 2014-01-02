@@ -1,21 +1,7 @@
-development:
-  adapter: mysql2
-  encoding: utf8
-  database: uxs_development
-  user: root
-  password: tine22
-  pool: 10
-
-test:
-  adapter: mysql2
-  encoding: utf8
-  database: uxs_test
-  user: root
-  password: tine22
-  pool: 10
-
 production:
   adapter: postgresql
   encoding: unicode
-  database: uxs_production
+  database: useflows_production
   pool: 5
+  username: useflows
+  password:
