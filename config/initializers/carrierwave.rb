@@ -1,6 +1,6 @@
 CarrierWave.configure do |config|
   
-  if Rails.env.test? # or Rails.env.development?
+  if Rails.env.test?  or Rails.env.development?
     config.storage = :file
     config.enable_processing = false if Rails.env.test?
   else

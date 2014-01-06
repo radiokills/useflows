@@ -1,3 +1,19 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV['DB_DEVELOPMENT_NAME'] %>
+  user: <%= ENV['DB_DEVELOPMENT_USER'] %>
+  password: <%= ENV['DB_DEVELOPMENT_PASSWORD'] %>
+  pool: 10
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: <%= ENV['DB_TEST_NAME'] %>
+  user: <%= ENV['DB_TEST_USER'] %>
+  password: <%= ENV['DB_TEST_PASSWORD'] %>
+  pool: 10
+
 production:
   adapter: postgresql
   encoding: unicode
