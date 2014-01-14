@@ -563,6 +563,10 @@ header {
             &:hover {
                 cursor: pointer;
                 background: $darkGray;
+                span.hidden{
+                    display: inline !important;
+                    visibility: visible;
+                }
             }
         }
         .prev {
