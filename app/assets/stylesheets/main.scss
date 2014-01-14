@@ -6,7 +6,94 @@
 @import 'vars';
 @import 'girder';
 
+/* @license
+ * MyFonts Webfont Build ID 2693262, 2013-11-21T13:36:02-0500
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Stat Display Pro Bold by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/bold/
+ *
+ * Webfont: Stat Display Pro Bold Oblique by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/bold-oblique/
+ *
+ * Webfont: Stat Display Pro by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/stat-display-pro/
+ *
+ * Webfont: Stat Display Pro Oblique by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/oblique/
+ *
+ * Webfont: Stat Display Pro Light by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/light/
+ *
+ * Webfont: Stat Display Pro Light Oblique by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/light-oblique/
+ *
+ * Webfont: Stat Display Pro Medium by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/medium/
+ *
+ * Webfont: Stat Display Pro Medium Oblique by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/medium-oblique/
+ *
+ * Webfont: Stat Display Pro Bold Negative by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/bold-negative/
+ *
+ * Webfont: Stat Display Pro Bold Oblique Negative by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/bold-oblique-negative/
+ *
+ * Webfont: Stat Display Pro Negative by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/negative/
+ *
+ * Webfont: Stat Display Pro Light Negative by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/light-negative/
+ *
+ * Webfont: Stat Display Pro Light Oblique Negative by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/light-oblique-negative/
+ *
+ * Webfont: Stat Display Pro Oblique Negative by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/oblique-negative/
+ *
+ * Webfont: Stat Display Pro Medium Negative by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/medium-negative/
+ *
+ * Webfont: Stat Display Pro Medium Oblique Negative by Jure Kožuh
+ * URL: http://www.myfonts.com/fonts/jure-kozuh/stat-display-pro/medium-oblique-negative/
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2693262
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright &#x00A9; 2012 by Jure Kozuh (Grafikarna). All rights reserved.
+ *
+ * © 2013 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("http://hello.myfonts.net/count/29188e");
+
+@font-face {font-family: 'StatDisplayPro-Bold';src: url('fonts/29188E_0_0.eot');src: url('fonts/29188E_0_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_0_0.woff') format('woff'),url('fonts/29188E_0_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-BoldOblique';src: url('fonts/29188E_1_0.eot');src: url('fonts/29188E_1_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_1_0.woff') format('woff'),url('fonts/29188E_1_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-Regular';src: url('fonts/29188E_2_0.eot');src: url('fonts/29188E_2_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_2_0.woff') format('woff'),url('fonts/29188E_2_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-RegularOblique';src: url('fonts/29188E_3_0.eot');src: url('fonts/29188E_3_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_3_0.woff') format('woff'),url('fonts/29188E_3_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-Light';src: url('fonts/29188E_4_0.eot');src: url('fonts/29188E_4_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_4_0.woff') format('woff'),url('fonts/29188E_4_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-LightOblique';src: url('fonts/29188E_5_0.eot');src: url('fonts/29188E_5_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_5_0.woff') format('woff'),url('fonts/29188E_5_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-Medium';src: url('fonts/29188E_6_0.eot');src: url('fonts/29188E_6_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_6_0.woff') format('woff'),url('fonts/29188E_6_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-MediumOblique';src: url('fonts/29188E_7_0.eot');src: url('fonts/29188E_7_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_7_0.woff') format('woff'),url('fonts/29188E_7_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-BoldNegative';src: url('fonts/29188E_8_0.eot');src: url('fonts/29188E_8_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_8_0.woff') format('woff'),url('fonts/29188E_8_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-BoldObliqueNegative';src: url('fonts/29188E_9_0.eot');src: url('fonts/29188E_9_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_9_0.woff') format('woff'),url('fonts/29188E_9_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-RegularNegative';src: url('fonts/29188E_A_0.eot');src: url('fonts/29188E_A_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_A_0.woff') format('woff'),url('fonts/29188E_A_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-LightNegative';src: url('fonts/29188E_B_0.eot');src: url('fonts/29188E_B_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_B_0.woff') format('woff'),url('fonts/29188E_B_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-LightObliqueNegative';src: url('fonts/29188E_C_0.eot');src: url('fonts/29188E_C_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_C_0.woff') format('woff'),url('fonts/29188E_C_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-RegularObliqueNegative';src: url('fonts/29188E_D_0.eot');src: url('fonts/29188E_D_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_D_0.woff') format('woff'),url('fonts/29188E_D_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-MediumNegative';src: url('fonts/29188E_E_0.eot');src: url('fonts/29188E_E_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_E_0.woff') format('woff'),url('fonts/29188E_E_0.ttf') format('truetype');}
+@font-face {font-family: 'StatDisplayPro-MediumObliqueNegative';src: url('fonts/29188E_F_0.eot');src: url('fonts/29188E_F_0.eot?#iefix') format('embedded-opentype'),url('fonts/29188E_F_0.woff') format('woff'),url('fonts/29188E_F_0.ttf') format('truetype');}
+
 /* Fonts */
+//$base-font-family: StatDisplayPro-Regular;
 $base-font-family: "Open Sans", Arial, sans-serif;
 $base-font-size: 15px;
 $base-line-height: 1.5em;
@@ -443,62 +530,87 @@ header {
             //margin-right: 0;
         }
     }
-    .pagination {
-        margin-top: 50px;
-        .row {
-            text-align: center;
-            position: relative;
+    nav.pagination {
+        margin: 5% 0;
+        text-align: center;
+        position: relative;
+        height: 37px;
+        color: $gray;
+        .prev,
+        .next {
+            position: absolute;
+            top: 0;
+            width: 100px;
             height: 37px;
-            color: $gray;
-            .prev,
-            .next {
-                position: absolute;
-                top: 0;
-                width: 100px;
-                height: 37px;
-                background: $gray;
+            background: $gray;
+            display: inline-block;
+            padding-top: 8px;
+            -webkit-transition: 0.1s;
+            -moz-transition: 0.1s;
+            -ms-transition: 0.1s;
+            -o-transition: 0.1s;
+            transition: 0.1s;
+            a {
+                color: $beigeLight;
+                text-decoration: none;
+            }
+            i {
+                width: 9px;
+                height: 15px;
+                cursor: pointer;
                 display: inline-block;
-                padding-top: 8px;
-                -webkit-transition: 0.1s;
-                -moz-transition: 0.1s;
-                -ms-transition: 0.1s;
-                -o-transition: 0.1s;
-                transition: 0.1s;
-                i {
-                    width: 9px;
-                    height: 15px;
-                    cursor: pointer;
-                    display: inline-block;
-                }
+            }
+            &:hover {
+                cursor: pointer;
+                background: $darkGray;
+            }
+        }
+        .prev {
+            left: 0;
+            i {
+                //background: image-url('sprite.png') no-repeat 0 -181px;
+            }
+        }
+        .next {
+            right: 0;
+            i {
+                //background: image-url('sprite.png') no-repeat -14px -181px;
+            }
+        }
+        span.page {
+            a {
+                text-decoration: none;
+            }
+        }
+        span.first,
+        span.last {
+            a {
+                text-decoration: none;
+            }
+        }
+        .pages {
+            margin-top: 6px;
+        }
+        /*
+        &.show-all {
+            margin-top: 20px;
+            a {
+                color: $gray;
+                text-decoration: none;
                 &:hover {
-                    cursor: pointer;
-                    background: $darkGray;
+                    text-decoration: underline;
                 }
             }
-            .prev {
-                left: 0;
-                i {
-                    background: image-url('sprite.png') no-repeat 0 -181px;
-                }
-            }
-            .next {
-                right: 0;
-                i {
-                    background: image-url('sprite.png') no-repeat -14px -181px;
-                }
-            }
-            .pages {
-                margin-top: 6px;
-            }
-            &.show-all {
-                margin-top: 20px;
-                a {
-                    color: $gray;
-                    text-decoration: none;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
+        }
+        */
+    }
+    span.small,
+    span.big,
+    span.large {
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
             }
         }
     }
@@ -562,10 +674,11 @@ footer {
     width:100%;
     min-height:100%;
     margin-bottom: -$headerHeight;
+    margin-top: 50px;
     z-index:9999;
     .about {
         padding-top: $headerHeight;
-        width: $container-width;
+        max-width: $container-width;
         margin: 0 auto;
         p.top {
             text-align: center;
@@ -580,15 +693,15 @@ footer {
             }
             img {
                 display: block;
-                margin: 80px 0 60px 415px;
+                margin: 50px auto;
             }
         }
         .quote {
             background: image-url('blockquote.png') no-repeat 0 0;
-            padding: 25px 0 0 40px;
-            margin: 0 0 100px 185px;
+            padding: 25px 40px 50px 40px;
+            margin: 0 auto;
             text-align: center;
-            width: 560px;
+            width: 600px;
             font-size: $h2-font-size;
             font-style: italic;
         }
@@ -643,6 +756,12 @@ footer {
     }
 }
 
+@media screen and (max-width: 960px) {
+    .about {
+        padding: 0 1.25em;
+    }
+}
+
 @media screen and (min-width: 767px) and (max-width: $container-width) {
     .search {
         width: pc(320, 960) !important;
@@ -689,6 +808,12 @@ footer {
             min-width: 10% !important;
         }
     }
+    .about {
+        padding: 10px;
+        .quote {
+            width: 480px !important;
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -705,6 +830,11 @@ footer {
                     line-height: 36px;
                 }
             }
+        }
+    }
+    .about {
+        .quote {
+            width: 380px !important;
         }
     }
 }

@@ -5,13 +5,13 @@
     = stylesheet_link_tag    "app", media: "all"
     = javascript_include_tag "vendor/custom.modernizr"
     = csrf_meta_tags
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400,700", :rel => "stylesheet", :type => "text/css"}
 %body
   .container
     %header
       %nav.row
-        %a.logo{href: '/'}
+        -# %a.logo{href: '/'}
         %ul
           %li.useflows
             = link_to '/' do
