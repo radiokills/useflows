@@ -47,7 +47,7 @@
                   = link_to 'Log Out', session_path(1), method: :delete
               - else
                 %li
-                  = link_to 'Log in with Twitter', '/auth/twitter'
+                  = link_to 'Login with Twitter', '/auth/twitter'
 
 
     .fw.content
@@ -80,14 +80,25 @@
 
         .people
           .owners.third
-            %strong Owners
-            %p @mitjamavsar @otobrglez
+            %strong Idea guys
+            %p
+              %a{:href => "//twitter.com/mitjamavsar", :target => "_blank", :title => "Mitja Mavsar"}@mitjamavsar
+            %p
+              %a{:href => "//twitter.com/otobrglez", :target => "_blank", :title => "Oto Brglez"}@otobrglez
           .developers.third
-            %strong Developers
-            %p @mihamencin @dTilen @danijelkurincic
+            %strong Code guys
+            %p
+              %a{:href => "//twitter.com/mihamencin", :target => "_blank", :title => "Miha Mencin"}@mihamencin
+            %p
+              %a{:href => "//twitter.com/dTilen", :target => "_blank", :title => "Tilen Držan"}@dTilen
+            %p
+              %a{:href => "//twitter.com/otobrglez", :target => "_blank", :title => "Oto Brglez"}@otobrglez
           .designers.third
-            %strong Designers
-            %p @gofrasdesign @danijelkurincic
+            %strong Design guys
+            %p
+              %a{:href => "//twitter.com/gofrasdesign", :target => "_blank", :title => "Frane Gorjanc"}@gofrasdesign
+            %p
+              %a{:href => "//twitter.com/danijelkurincic", :target => "_blank", :title => "Danijel Kurinčič"}@danijelkurincic
 
   %footer.fw
     .wrapper.row.bottom

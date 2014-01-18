@@ -553,6 +553,8 @@ header {
             a {
                 color: $beigeLight;
                 text-decoration: none;
+                font-size: 36px;
+                line-height: 14px;
             }
             i {
                 width: 9px;
@@ -582,6 +584,7 @@ header {
             }
         }
         span.page {
+            line-height: 37px;
             a {
                 text-decoration: none;
             }
@@ -721,13 +724,21 @@ footer {
             strong {
                 font-size: 16px;
                 color: $beigeLight;
+                line-height: 34px;
             }
             .owners,
             .developers,
             .designers {
                 display: inline-block;
                 float: left;
-                margin-right: 300px;
+                margin-right: 33%;
+                p {
+                    margin: 0;
+                    a {
+                        color: $beigeDark;
+                        text-decoration: none;
+                    }
+                }
             }
             .designers {
                 margin-right: 0;
