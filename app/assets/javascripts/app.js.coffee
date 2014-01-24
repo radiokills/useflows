@@ -12,7 +12,10 @@ $(window).load -> NProgress.done()
 $(document).ajaxStart -> NProgress.start()
 
 $(document).ajaxStop -> NProgress.done()
-$(document).image_swapper()
+
+# Now we use 'click to play madafaka'
+#$(document).image_swapper()
+$(document).click_play()
 
 $(window).load ->
     container = document.querySelector('.item-list');

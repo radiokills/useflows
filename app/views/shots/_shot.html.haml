@@ -1,8 +1,8 @@
 %li.shot.item
-  .overlay
   .shot-wrap
-    = link_to shot do
-      =image_tag shot.image.still, class: 'still'
+    .overlay
+      = image_tag 'play.png'
+    = image_tag shot.image.still, class: 'still'
     .meta
       - if shot.description.present?
         %h4.description=shot.description
