@@ -414,13 +414,14 @@ header {
             width: 100%;
             img{
                 border: none;
-                margin-top: -64px;
-                margin-left: -64px;
-                padding-top: 50%;
-                padding-left: 50%;
-                opacity: 0.5;
+                position: absolute;
+                opacity: 0.8;
                 cursor: pointer;
-                 
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
             }
         }
         img {
