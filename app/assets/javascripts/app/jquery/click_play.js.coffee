@@ -4,7 +4,7 @@ class ClickPlay
     @curently_playing = null
     @image = $(element)
     @image_src = @image.attr('src')
-    
+
     $(document).on('click', '.still', (e)=>
       @play(e)
       if @curently_playing
@@ -14,6 +14,8 @@ class ClickPlay
 
   play: (e) =>
     img = $(e.currentTarget)
+    $('.still').closest('.item').addClass('faded')
+    img.closest('.item').removeClass('faded')
     img.prev('.overlay').hide()
     @switch_image(img)
 
