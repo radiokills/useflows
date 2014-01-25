@@ -192,8 +192,10 @@ header {
                     display: inline-block;
                     vertical-align: text-bottom;
                 }
-                &.useflows i {
-                    background: image-url('sprite.png') no-repeat 6px -47px;
+                &.useflows {
+                    i {
+                        background: image-url('sprite.png') no-repeat 6px -47px;
+                    }
                 }
                 &.favorites i {
                     background: image-url('sprite.png') no-repeat 0 0;
@@ -207,8 +209,14 @@ header {
                 }
                 &:hover {
                     background: $lighterBrown;
+                    height: 46px;
+                    padding-right: 0;
+                    &.useflows > a {
+                        position: absolute;
+                    }
                     ul.dropdown {
                         display: block;
+                        margin-left: -15px;
                     }
                 }
                 /* Dropdown navigation */
@@ -329,16 +337,19 @@ header {
                 padding: 0;
                 height: $headerHeight;
                 ul.dropdown {
+                    position: absolute;
                     right: 0;
                     left: auto;
-                    min-width: 100px !important;
+                    min-width: 138px !important;
+                    width: 50px;
                     text-align: left;
                     li {
                         //padding: 0 15px;
                         &:last-child {
-                            padding-top: 5px;
-                            margin-top: 5px;
-                            border-top: 1px solid $gray;
+                            //padding-top: 5px;
+                            //margin-top: 5px;
+                            //border-top: 1px solid $gray;
+                            width: 110px;
                             a {
                                 color: $red;
                             }
