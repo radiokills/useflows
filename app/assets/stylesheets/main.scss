@@ -211,6 +211,7 @@ header {
                     background: $lighterBrown;
                     height: 46px;
                     padding-right: 0;
+                    max-width: 570px;
                     &.useflows > a {
                         position: absolute;
                     }
@@ -811,6 +812,9 @@ footer {
         h1 {
             margin-top: 15px !important;
             font-size: 26px;
+        }
+        nav ul li:hover {
+            max-width: 200px;
         }
         .sort {
             float: left !important;
