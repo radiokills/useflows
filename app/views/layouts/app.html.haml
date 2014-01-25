@@ -18,7 +18,7 @@
               UseFlows
               %span= Shot.count.to_s
               %i
-            - (Shot.tag_counts.sort{ |x,y| y.count <=> x.count}).each_slice(20) do |tags|
+            - (Shot.tag_counts.sort{ |x,y| y.count <=> x.count}).each_slice(28) do |tags|
               %ul.dropdown
                 - tags.each do |tag|
                   %li
