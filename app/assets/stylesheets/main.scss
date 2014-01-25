@@ -215,7 +215,7 @@ header {
                 }
                 &.favorites {
                     position: absolute;
-                    left: 165px;
+                    margin-left: 165px;
                     &:hover {
                         ul.dropdown {
                             display: block;
