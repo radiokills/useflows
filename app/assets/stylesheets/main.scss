@@ -144,7 +144,8 @@ input:focus, textarea:focus {
 
 /* Header */
 header {
-    position: fixed;
+    //position: fixed; /* This makes header fixed and therefore the drop-down menus non-scrollable down the page */
+    position: absolute;
     top: 0;
     left: 0;
     background: $defaultBrown;
