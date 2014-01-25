@@ -18,13 +18,12 @@
               UseFlows
               %span= Shot.count.to_s
               %i
-            %ul.dropdown
-              %li
-                %a{:href => "/"} All useflows
-                = Shot.count.to_s
-              - (Shot.tag_counts.sort{ |x,y| y.count <=> x.count} [0..20]).each do |tag|
-                %li
-                  = link_to  "#{tag.name.titleize} #{tag.count}", "/?tag=#{tag.name}"
+            - (Shot.tag_counts.sort{ |x,y| y.count <=> x.count}).each_slice(20) do |tags|
+              %ul.dropdown
+                - tags.each do |tag|
+                  %li
+                    = link_to  "#{tag.name.titleize} #{tag.count}", "/?tag=#{tag.name}"
+
           - if current_user
             = render 'layouts/shared/user_favorites_dropdown'
           %li.new.hidden

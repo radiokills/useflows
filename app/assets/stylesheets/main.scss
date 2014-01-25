@@ -213,10 +213,11 @@ header {
                 }
                 /* Dropdown navigation */
                 ul.dropdown {
+                    width: 200px;
+                    position:  relative;
+                    float: left;
                     display: none;
-                    position: absolute;
                     top: $headerHeight;
-                    left: 0;
                     background: $white;
                     color: $darkGray;
                     padding: 15px;
@@ -227,7 +228,7 @@ header {
                     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.25);
                     box-shadow: 0 0 10px rgba(0,0,0,0.25);
                     li {
-                        width: 100%;
+                        width: 200px;
                         line-height: 20px;
                         height: 20px;
                         color: $lightGray;
@@ -244,6 +245,7 @@ header {
                         }
                     }
                 }
+                /*
                 &.useflows {
                     ul.dropdown {
                         li:first-child:before {
@@ -269,6 +271,7 @@ header {
                         }
                     }
                 }
+                */
             }
         }
         .add-new {
